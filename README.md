@@ -46,3 +46,23 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+### Sources
+
+I used this site to read up on the Held-Karp Algorithm and based my code off of the code provided: https://compgeek.co.in/held-karp-algorithm-for-tsp/
+
+I used ChatGPT with the following prompts: "explain this code: 
+for (int mask = 1; mask < totalSubsets; mask++) {
+    for (int u = 0; u < n; u++) {
+      if (mask & (1 << u)) {
+        for (int v = 0; v < n; v++) {
+          if ((mask & (1 << v)) == 0) {
+            int newMask = mask | (1 << v);
+            dp[newMask][v] = min(dp[newMask][v], dp[mask][u] + dist[u][v]);
+          }
+        }
+      }
+    }
+  }"
+
+“I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.” - Natalie Sleight
