@@ -47,6 +47,10 @@ What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
 
+The worst-case asymptotic time complexity is $T(n) ∈ (n^3 * 2^n)$.
+
+The code has 5 for loops total. The first one runs $n$ times with two for loops within. One of those for loops runs $n$ while the other runs $2^n$ and has nested for loops inside. Those loops both run $n$ and are nested in each other. Then the total equation for the loops is $n(2^n(n(n)) + n)$ which equals $n^3 * 2^n + n^2$.
+
 ### Sources
 
 I used this site to read up on the Held-Karp Algorithm and based my code off of the code provided: https://compgeek.co.in/held-karp-algorithm-for-tsp/
