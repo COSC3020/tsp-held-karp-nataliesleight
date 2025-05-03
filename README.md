@@ -47,26 +47,18 @@ What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
 
-The worst-case asymptotic time complexity is $T(n) ∈ (n^3 * 2^n)$.
+The worst-case asymptotic time complexity is $T(n) ∈ \Theta()$.
 
-The code has 5 for loops total. The first one runs $n$ times with two for loops within. One of those for loops runs $n$ while the other runs $2^n$ and has nested for loops inside. Those loops both run $n$ and are nested in each other. Then the total equation for the loops is $n(2^n(n(n)) + n)$ which equals $n^3 * 2^n + n^2$.
+The worst-case asymptotic memory complexity is $M(n) ∈ \Theta()$.
 
 ### Sources
 
-I used this site to read up on the Held-Karp Algorithm and based my code off of the code provided: https://compgeek.co.in/held-karp-algorithm-for-tsp/
+I used this site to read up on the Held-Karp Algorithm: https://compgeek.co.in/held-karp-algorithm-for-tsp/
 
-I used ChatGPT with the following prompts: "explain this code: 
-for (int mask = 1; mask < totalSubsets; mask++) {
-    for (int u = 0; u < n; u++) {
-      if (mask & (1 << u)) {
-        for (int v = 0; v < n; v++) {
-          if ((mask & (1 << v)) == 0) {
-            int newMask = mask | (1 << v);
-            dp[newMask][v] = min(dp[newMask][v], dp[mask][u] + dist[u][v]);
-          }
-        }
-      }
-    }
-  }"
+This time I tried memoization rather than dynamic programming. I received help from Noah Vogt and Maya Conway. 
+
+I used this link to learn about the spread operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+I used this link to learn how to remove an element from an array by value: https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript
 
 “I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.” - Natalie Sleight
